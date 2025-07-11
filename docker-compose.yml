@@ -6,12 +6,16 @@ services:
     ports:
       - "9870:9870"
     command: /etc/bootstrap.sh namenode
+    tty: true
+
   datanode:
     image: suhothayan/hadoop-spark-pig-hive:2.9.2
     container_name: datanode
     depends_on:
       - namenode
     command: /etc/bootstrap.sh datanode
+    tty: true
+
   pig:
     image: suhothayan/hadoop-spark-pig-hive:2.9.2
     container_name: pig
