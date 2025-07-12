@@ -12,7 +12,7 @@ por_categoria = GROUP ventas BY categoria;
 estadisticas = FOREACH por_categoria GENERATE 
   group AS categoria, 
   COUNT(ventas) AS cantidad,
-  AVG(ventas.monto) AS promedio;  -- 💡 aquí estaba el error
+  AVG(ventas.monto) AS promedio;
 
 ordenadas = ORDER altas BY monto DESC;
 
